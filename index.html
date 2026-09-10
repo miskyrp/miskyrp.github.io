@@ -6,11 +6,12 @@
     <title>Misky RP - Serveur FiveM</title>
     <style>
         :root {
-            --primary-color: #ff3e3e; /* Colore principale (modificalo in base al tuo logo) */
-            --bg-color: #0d0e12;
-            --card-bg: #161820;
+            --primary-color: #00bcd4; /* Bleu Misky */
+            --accent-color: #ff4081;  /* Rose Misky */
+            --bg-color: #0a0c14;
+            --card-bg: #131722;
             --text-color: #ffffff;
-            --text-muted: #a0a5b5;
+            --text-muted: #949aab;
         }
 
         * {
@@ -33,12 +34,13 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 8%;
-            background: rgba(13, 14, 18, 0.8);
+            background: rgba(10, 12, 20, 0.8);
             backdrop-filter: blur(10px);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            border-bottom: 1px solid rgba(0, 188, 212, 0.1);
         }
 
         .logo-container {
@@ -48,10 +50,11 @@
         }
 
         .logo-img {
-            width: 50px; /* Regola la dimensione del logo nella navbar */
+            width: 50px;
             height: 50px;
             object-fit: cover;
             border-radius: 50%;
+            border: 2px solid var(--primary-color);
         }
 
         .server-name {
@@ -61,7 +64,7 @@
         }
 
         .server-name span {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         nav a {
@@ -85,15 +88,15 @@
             align-items: center;
             text-align: center;
             padding: 0 20px;
-            background: linear-gradient(rgba(13, 14, 18, 0.7), rgba(13, 14, 18, 0.9)), url('https://unsplash.com') no-repeat center center/cover;
-            /* Nota: Sostituisci l'URL dello sfondo con uno screenshot del tuo server se preferisci */
+            background: linear-gradient(rgba(10, 12, 20, 0.7), rgba(10, 12, 20, 0.95)), url('https://unsplash.com') no-repeat center center/cover;
         }
 
         .hero-logo {
-            width: 150px; /* Dimensione del logo centrale */
-            height: 150px;
+            width: 160px;
+            height: 160px;
             margin-bottom: 20px;
             animation: float 4s ease-in-out infinite;
+            filter: drop-shadow(0 0 15px rgba(0, 188, 212, 0.5));
         }
 
         @keyframes float {
@@ -102,21 +105,22 @@
         }
 
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 2px;
+            color: var(--primary-color);
         }
 
         .hero h1 span {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .hero p {
             font-size: 1.2rem;
             color: var(--text-muted);
             max-width: 600px;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .cta-buttons {
@@ -127,7 +131,7 @@
         }
 
         .btn {
-            padding: 12px 30px;
+            padding: 14px 35px;
             border-radius: 5px;
             font-weight: bold;
             text-decoration: none;
@@ -136,26 +140,27 @@
         }
 
         .btn-primary {
-            background-color: var(--primary-color);
+            background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 62, 62, 0.4);
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.4);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(255, 62, 62, 0.6);
+            box-shadow: 0 6px 20px rgba(255, 64, 129, 0.6);
         }
 
         .btn-secondary {
             background-color: transparent;
             color: white;
-            border: 2px solid white;
+            border: 2px solid var(--primary-color);
         }
 
         .btn-secondary:hover {
-            background-color: white;
+            background-color: var(--primary-color);
             color: var(--bg-color);
             transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 188, 212, 0.3);
         }
 
         /* Features Section */
@@ -171,7 +176,7 @@
         }
 
         .features h2 span {
-            color: var(--primary-color);
+            color: var(--accent-color);
         }
 
         .grid {
@@ -196,6 +201,7 @@
         .card h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
+            color: var(--primary-color);
         }
 
         .card p {
@@ -205,18 +211,18 @@
 
         /* Footer */
         footer {
-            background-color: #08090c;
+            background-color: #06070a;
             text-align: center;
             padding: 30px;
             color: var(--text-muted);
             font-size: 0.9rem;
-            border-top: 1px solid #1f222e;
+            border-top: 1px solid rgba(0, 188, 212, 0.1);
         }
 
         /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            nav { display: none; } /* Semplificato per mobile */
+            .hero h1 { font-size: 2.8rem; }
+            nav { display: none; }
         }
     </style>
 </head>
@@ -225,8 +231,7 @@
     <!-- NAVBAR -->
     <header>
         <div class="logo-container">
-            <!-- Sostituisci 'logo.png' con il percorso del tuo logo reale -->
-            <img src="logo.png" alt="Misky RP Logo" class="logo-img">
+            <img src="miskyrp.png" alt="Misky RP Logo" class="logo-img">
             <div class="server-name">Misky <span>RP</span></div>
         </div>
         <nav>
@@ -238,12 +243,11 @@
 
     <!-- HERO SECTION -->
     <section class="hero" id="home">
-        <!-- Sostituisci 'logo.png' con il percorso del tuo logo reale -->
-        <img src="logo.png" alt="Misky RP" class="hero-logo">
+        <img src="miskyrp.png" alt="Misky RP" class="hero-logo">
         <h1>Misky <span>RP</span></h1>
-        <p>Incarnez le personnage di i vostri sogni sul nostro server FiveM RP. Un'economia reale, fazioni attive e un'esperienza di gioco immersiva vi aspettano.</p>
+        <p>Incarnez le personnage de vos rêves sur notre serveur FiveM RP. Économie réaliste, factions actives et expérience immersive vous attendent.</p>
         <div class="cta-buttons">
-            <a href="fivem://connect/IP_DU_SERVEUR" class="btn btn-primary">Rejoindre le Serveur</a>
+            <a href="fivem://connect/game4.northhost.fr:30204" class="btn btn-primary">Rejoindre le Serveur</a>
             <a href="https://discord.gg" target="_blank" class="btn btn-secondary">Rejoindre le Discord</a>
         </div>
     </section>
@@ -261,8 +265,8 @@
                 <p>Rejoignez la LSPD, les EMS, ou gérez votre propre organisation criminelle avec des scripts exclusifs.</p>
             </div>
             <div class="card">
-                <h3>Dev Exclusif</h3>
-                <p>Des optimisations constantes, des véhicules personnalisés ed un staff à l'écoute per garantire il miglior RP.</p>
+                <h3>🚀 Dev Exclusif</h3>
+                <p>Des optimisations constantes, des véhicules personnalisés et un staff à l'écoute pour garantir le meilleur RP.</p>
             </div>
         </div>
     </section>
